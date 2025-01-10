@@ -328,9 +328,8 @@ class SettingsState extends State<Settings> {
               Icons.assessment_outlined,
             ),
             title: const Text('CF Partner'),
-            subtitle: const Text('Download local version to get more features!'),
             trailing: const Text(
-              'web v1',
+              '3.4 [web]',
               style: TextStyle(
                 fontSize: 16,
               ),

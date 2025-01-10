@@ -304,7 +304,7 @@ class ChallengeState extends State<Challenge> {
                 Icons.archive_outlined,
               ),
               trailing: const Icon(Icons.open_in_new),
-              title: const Text('Daily Problems Archive'),
+              title: const Text('Online Categories'),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
