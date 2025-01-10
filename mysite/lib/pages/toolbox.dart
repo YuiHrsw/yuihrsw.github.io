@@ -1,5 +1,5 @@
 import 'package:mysite/backend/cfapi/cf_helper.dart';
-// import 'package:mysite/pages/toolbox/anti_macros.dart';
+import 'package:mysite/pages/toolbox/anti_macros.dart';
 // import 'package:mysite/pages/toolbox/bingo.dart';
 import 'package:mysite/pages/toolbox/online_categories.dart';
 // import 'package:mysite/pages/toolbox/randcontest.dart';
@@ -41,19 +41,19 @@ class ToolboxState extends State<Toolbox> {
               );
             },
           ),
-          // ListTile(
-          //   leading: const Icon(
-          //     Icons.find_replace,
-          //   ),
-          //   title: const Text('Anti-Macros'),
-          //   onTap: () {
-          //     Navigator.of(context).push(
-          //       MaterialPageRoute(
-          //         builder: (context) => const AntiMacros(),
-          //       ),
-          //     );
-          //   },
-          // ),
+          ListTile(
+            leading: const Icon(
+              Icons.find_replace,
+            ),
+            title: const Text('Anti-Macros'),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const AntiMacros(),
+                ),
+              );
+            },
+          ),
           ListTile(
             leading: const Icon(
               Icons.archive_outlined,

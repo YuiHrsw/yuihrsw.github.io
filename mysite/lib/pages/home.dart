@@ -1,7 +1,7 @@
 import 'package:mysite/backend/storage.dart';
 import 'package:mysite/pages/dashboard/dashboard.dart';
 // import 'package:mysite/pages/exercises.dart';
-import 'package:mysite/pages/toolbox.dart';
+// import 'package:mysite/pages/toolbox.dart';
 import 'package:mysite/pages/settings.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class HomeState extends State<Home> {
   int _currentPageIndex = 0;
   // final _exercise = GlobalKey<NavigatorState>();
   final _challenge = GlobalKey<NavigatorState>();
-  final _toolbox = GlobalKey<NavigatorState>();
+  // final _toolbox = GlobalKey<NavigatorState>();
   final _settings = GlobalKey<NavigatorState>();
 
   @override
@@ -84,14 +84,14 @@ class HomeState extends State<Home> {
             //   ),
             //   label: Text('Categories'),
             // ),
-            NavigationRailDestination(
-              padding: EdgeInsets.symmetric(vertical: 4),
-              icon: Icon(
-                Icons.token_rounded,
-                size: 28,
-              ),
-              label: Text('Toolbox'),
-            ),
+            // NavigationRailDestination(
+            //   padding: EdgeInsets.symmetric(vertical: 4),
+            //   icon: Icon(
+            //     Icons.token_rounded,
+            //     size: 28,
+            //   ),
+            //   label: Text('Toolbox'),
+            // ),
             NavigationRailDestination(
               padding: EdgeInsets.symmetric(vertical: 4),
               icon: Icon(
@@ -120,13 +120,13 @@ class HomeState extends State<Home> {
               //     builder: (context) => const Exercises(),
               //   ),
               // ),
-              Navigator(
-                key: _toolbox,
-                onGenerateRoute: (route) => MaterialPageRoute(
-                  settings: route,
-                  builder: (context) => const Toolbox(),
-                ),
-              ),
+              // Navigator(
+              //   key: _toolbox,
+              //   onGenerateRoute: (route) => MaterialPageRoute(
+              //     settings: route,
+              //     builder: (context) => const Toolbox(),
+              //   ),
+              // ),
               Navigator(
                 key: _settings,
                 onGenerateRoute: (route) => MaterialPageRoute(

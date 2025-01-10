@@ -1,11 +1,12 @@
-import 'package:mysite/backend/library_helper.dart';
-import 'package:mysite/backend/storage.dart';
+// import 'package:mysite/backend/library_helper.dart';
+// import 'package:mysite/backend/storage.dart';
 import 'package:mysite/backend/web_helper.dart';
 import 'package:mysite/pages/dashboard/models/challenge_problem.dart';
 import 'package:mysite/pages/dashboard/models/online_contest.dart';
 import 'package:mysite/pages/dashboard/problem_parser.dart';
 import 'package:mysite/pages/toolbox/online_categories.dart';
 import 'package:flutter/material.dart';
+import 'package:mysite/pages/toolbox/tracker.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Challenge extends StatefulWidget {
@@ -175,17 +176,17 @@ class ChallengeState extends State<Challenge> {
                     onPressed: _loadLatestDailyProblems,
                     icon: const Icon(Icons.refresh_rounded),
                   ),
-                  IconButton(
-                    tooltip: 'Categories',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const OnlineCategories(),
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.stream),
-                  ),
+                  // IconButton(
+                  //   tooltip: 'Categories',
+                  //   onPressed: () {
+                  //     Navigator.of(context).push(
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const OnlineCategories(),
+                  //       ),
+                  //     );
+                  //   },
+                  //   icon: const Icon(Icons.stream),
+                  // ),
                   IconButton(
                     tooltip: 'Open repo',
                     onPressed: () {
@@ -264,6 +265,55 @@ class ChallengeState extends State<Challenge> {
           //         },
           //         itemCount: _contests.length,
           //       ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Text(
+                    'Toolbox',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ListTile(
+              leading: const Icon(
+                Icons.track_changes_outlined,
+              ),
+              trailing: const Icon(Icons.open_in_new),
+              title: const Text('CF Tracker'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TrackerPage(),
+                  ),
+                );
+              },
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ListTile(
+              leading: const Icon(
+                Icons.archive_outlined,
+              ),
+              trailing: const Icon(Icons.open_in_new),
+              title: const Text('Daily Problems Archive'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const OnlineCategories(),
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
@@ -362,71 +412,71 @@ class ChallengeState extends State<Challenge> {
                     },
                     icon: const Icon(Icons.tips_and_updates_outlined),
                   ),
-                  IconButton(
-                    tooltip: 'Save',
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Add to list'),
-                          content: SizedBox(
-                            width: 400,
-                            height: 300,
-                            child: ListView.builder(
-                              itemBuilder: (context, indexList) {
-                                return SizedBox(
-                                  height: 60,
-                                  child: InkWell(
-                                    onTap: () {
-                                      LibraryHelper.addProblemToList(
-                                          AppStorage().problemlists[indexList],
-                                          p);
-                                      Navigator.pop(context);
-                                    },
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 6,
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: colorScheme.primaryContainer,
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          height: 50,
-                                          width: 50,
-                                          child: Icon(
-                                            Icons.star_rounded,
-                                            color:
-                                                colorScheme.onPrimaryContainer,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 6,
-                                        ),
-                                        Text(
-                                          AppStorage()
-                                              .problemlists[indexList]
-                                              .title,
-                                          style: const TextStyle(fontSize: 18),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                              itemCount: AppStorage().problemlists.length,
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                    icon: const Icon(
-                      Icons.copy_rounded,
-                    ),
-                  ),
+                  // IconButton(
+                  //   tooltip: 'Save',
+                  //   onPressed: () {
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (BuildContext context) => AlertDialog(
+                  //         title: const Text('Add to list'),
+                  //         content: SizedBox(
+                  //           width: 400,
+                  //           height: 300,
+                  //           child: ListView.builder(
+                  //             itemBuilder: (context, indexList) {
+                  //               return SizedBox(
+                  //                 height: 60,
+                  //                 child: InkWell(
+                  //                   onTap: () {
+                  //                     LibraryHelper.addProblemToList(
+                  //                         AppStorage().problemlists[indexList],
+                  //                         p);
+                  //                     Navigator.pop(context);
+                  //                   },
+                  //                   borderRadius: BorderRadius.circular(20),
+                  //                   child: Row(
+                  //                     children: [
+                  //                       const SizedBox(
+                  //                         width: 6,
+                  //                       ),
+                  //                       Container(
+                  //                         decoration: BoxDecoration(
+                  //                           color: colorScheme.primaryContainer,
+                  //                           borderRadius:
+                  //                               BorderRadius.circular(20),
+                  //                         ),
+                  //                         height: 50,
+                  //                         width: 50,
+                  //                         child: Icon(
+                  //                           Icons.star_rounded,
+                  //                           color:
+                  //                               colorScheme.onPrimaryContainer,
+                  //                         ),
+                  //                       ),
+                  //                       const SizedBox(
+                  //                         width: 6,
+                  //                       ),
+                  //                       Text(
+                  //                         AppStorage()
+                  //                             .problemlists[indexList]
+                  //                             .title,
+                  //                         style: const TextStyle(fontSize: 18),
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                 ),
+                  //               );
+                  //             },
+                  //             itemCount: AppStorage().problemlists.length,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     );
+                  //   },
+                  //   icon: const Icon(
+                  //     Icons.copy_rounded,
+                  //   ),
+                  // ),
                 ],
               )),
               const SizedBox(
