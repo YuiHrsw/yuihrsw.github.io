@@ -5,10 +5,10 @@ import 'package:mysite/backend/library_helper.dart';
 import 'package:mysite/backend/list_item.dart';
 import 'package:mysite/backend/problem_item.dart';
 // import 'package:mysite/backend/storage.dart';
-import 'package:code_text_field/code_text_field.dart';
+// import 'package:code_text_field/code_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_highlight/themes/monokai-sublime.dart';
-import 'package:highlight/languages/cpp.dart';
+// import 'package:flutter_highlight/themes/monokai-sublime.dart';
+// import 'package:highlight/languages/cpp.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ListDetail extends StatefulWidget {
@@ -21,12 +21,13 @@ class ListDetail extends StatefulWidget {
 }
 
 class ListDetailState extends State<ListDetail> {
-  final TextEditingController _editingController = TextEditingController();
-  final CodeController _codeController = CodeController(language: cpp);
+  final _editingController = TextEditingController();
+  // final _codeController = CodeController(language: cpp);
+  final _codeController = TextEditingController();
 
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _urlController = TextEditingController();
-  final bool _locked = false;
+  final _titleController = TextEditingController();
+  final _urlController = TextEditingController();
+  final _locked = false;
   // late final HttpServer _server;
   // bool _listening = false;
 
@@ -815,7 +816,7 @@ class ListDetailState extends State<ListDetail> {
                 onPressed: () {
                   _codeController.text = items[index].note;
                   showDialog(
-                    barrierDismissible: false,
+                    // barrierDismissible: false,
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
                       title: Text(
@@ -824,16 +825,25 @@ class ListDetailState extends State<ListDetail> {
                       content: SizedBox(
                         height: double.infinity,
                         width: double.maxFinite,
-                        child: CodeTheme(
-                          data:
-                              const CodeThemeData(styles: monokaiSublimeTheme),
-                          child: CodeField(
-                            expands: true,
-                            controller: _codeController,
-                            textStyle: const TextStyle(
-                              fontFamily: "Fira Code",
-                              fontWeight: FontWeight.w500,
-                            ),
+                        // child: CodeTheme(
+                        //   data:
+                        //       const CodeThemeData(styles: monokaiSublimeTheme),
+                        //   child: CodeField(
+                        //     expands: true,
+                        //     controller: _codeController,
+                        //     textStyle: const TextStyle(
+                        //       fontFamily: "Fira Code",
+                        //       fontWeight: FontWeight.w500,
+                        //     ),
+                        //   ),
+                        // ),
+                        child: TextField(
+                          expands: true,
+                          minLines: null,
+                          maxLines: null,
+                          controller: _codeController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
                           ),
                         ),
                       ),

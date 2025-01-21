@@ -52,10 +52,10 @@ class CFPartner extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            dialogTheme: DialogTheme(
-              surfaceTintColor: Colors.transparent,
-              barrierColor: lightTheme.surfaceTint.withOpacity(0.12),
-            ),
+            // dialogTheme: DialogTheme(
+            //   surfaceTintColor: Colors.transparent,
+            //   barrierColor: lightTheme.surfaceTint.withOpacity(0.12),
+            // ),
             appBarTheme: AppBarTheme(
               scrolledUnderElevation: 0,
               backgroundColor: lightTheme.surface,
@@ -78,10 +78,10 @@ class CFPartner extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            dialogTheme: DialogTheme(
-              surfaceTintColor: Colors.transparent,
-              barrierColor: darkTheme.surfaceTint.withOpacity(0.12),
-            ),
+            // dialogTheme: DialogTheme(
+            //   surfaceTintColor: Colors.transparent,
+            //   barrierColor: darkTheme.surfaceTint.withOpacity(0.12),
+            // ),
             appBarTheme: AppBarTheme(
               scrolledUnderElevation: 0,
               backgroundColor: darkTheme.surface,
